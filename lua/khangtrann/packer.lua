@@ -43,4 +43,14 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
 
     use 'lewis6991/gitsigns.nvim'
+
+    use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+
+    -- optional
+    use {'junegunn/fzf', run = function()
+            vim.fn['fzf#install']()
+        end
+    }
+
+    use('f-person/git-blame.nvim')
 end)
