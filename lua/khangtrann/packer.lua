@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
 
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},
+            {'mfussenegger/nvim-jdtls'},
+
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
 			{'hrsh7th/cmp-nvim-lsp'},
@@ -52,7 +54,23 @@ return require('packer').startup(function(use)
         end
     }
 
-    use('f-person/git-blame.nvim')
-
     use("folke/trouble.nvim")
+
+    use('christoomey/vim-tmux-navigator')
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-treesitter/nvim-treesitter"
+        }
+    }
+
+    use('rcasia/neotest-java')
 end)
